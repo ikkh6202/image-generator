@@ -1,0 +1,11 @@
+# IDE 설정
+.vscode/
+.idea/
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+
+# 기타
+*.log
+node_modules/ 

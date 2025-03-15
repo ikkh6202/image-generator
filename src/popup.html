@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지생성기!!!!!!!!!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-title">
+        <span class="title-text">✨ 사진 생성기</span>
+        <span class="author">By <a href="https://kimcoding.co.kr" target="_blank">kimcoding</a></span>
+    </div>
+    
+    <div class="image-search-section">
+        <div class="api-key-container">
+            <label>🔑 Pixabay API 키를 입력하세요</label>
+            <input type="password" class="api-key-field" id="pixabayApiKey" placeholder="API 키 입력">
+            <button class="api-key-save">💾 저장</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="imageSearchQuery" placeholder="검색어를 입력하세요 (예: nature, cats)">
+            <button class="search-button">🔍 검색</button>
+        </div>
+
+        <div class="image-results">
+            <!-- 검색 결과가 여기에 동적으로 추가됨 -->
+        </div>
+        <button class="load-more" style="display: none;">🔄 더 보기</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html> 

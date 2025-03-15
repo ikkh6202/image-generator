@@ -24,17 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 검색 버튼
-    document.querySelector('.search-button').addEventListener('click', () => {
-        currentPage = 1;
-        searchImages(true);
-    });
+    document.querySelector('.search-button').addEventListener('click', () => searchImages(true));
     
     // 검색어 입력 필드 엔터 키
     document.getElementById('imageSearchQuery').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            currentPage = 1;
-            searchImages(true);
-        }
+        if (e.key === 'Enter') searchImages(true);
     });
 
     // 더 보기 버튼 이벤트 리스너
@@ -132,13 +126,21 @@ function downloadImage(url, filename) {
         url: url,
         filename: `${filename}.jpg`,
         saveAs: false
+    }, (downloadId) => {
+        if (chrome.runtime.lastError) {
+            alert('다운로드 중 오류가 발생했습니다.');
+        } else {
+            alert('다운로드가 시작되었습니다!');
+        }
     });
 }
 
 // 이미지 URL 복사
 function copyImageUrl(url) {
     navigator.clipboard.writeText(url)
-        .then(() => alert('이미지 URL이 복사되었습니다!'))
+        .then(() => {
+            alert('이미지 URL이 클립보드에 복사되었습니다!');
+        })
         .catch(err => {
             console.error('URL 복사 오류:', err);
             alert('URL 복사에 실패했습니다.');
